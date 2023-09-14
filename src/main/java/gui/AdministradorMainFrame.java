@@ -290,7 +290,6 @@ public void mostrarVentana() {
         }
     }
 
-    // Luego, actualiza la tabla con los datos actualizados
     LlenarTablaProfesores(profesores);
 }
 
@@ -299,7 +298,6 @@ public void actualizarTablaCursos(Curso cursoActualizado) {
     for (int i = 0; i < cursos.size(); i++) {
         Curso curso = cursos.get(i);
         if (curso.getCodigoCurso() == cursoActualizado.getCodigoCurso()) {
-            // Actualiza los datos del profesor
             curso.setNombreCurso(cursoActualizado.getNombreCurso());
             curso.setCreditos(cursoActualizado.getCreditos());
             break;
@@ -798,7 +796,7 @@ public void generarGraficaEstudiantes() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void crearProfesorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearProfesorButtonActionPerformed
-        CrearProfesor crearProfesor = new CrearProfesor(this, profesores); // Pasa la instancia actual de AdministradorMainFrame al constructor de CrearProfesor
+        CrearProfesor crearProfesor = new CrearProfesor(this, profesores); 
         crearProfesor.setVisible(true);
         this.dispose();
         
@@ -860,7 +858,7 @@ public void generarGraficaEstudiantes() {
     }//GEN-LAST:event_exportarProfesorButtonActionPerformed
 
     private void cargarProfesorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarProfesorButtonActionPerformed
-      JFileChooser fileChooser = new JFileChooser();
+     JFileChooser fileChooser = new JFileChooser();
     fileChooser.setMultiSelectionEnabled(true);
     FileNameExtensionFilter csvFilter = new FileNameExtensionFilter("Archivos CSV", "csv");
     fileChooser.setFileFilter(csvFilter);
@@ -969,31 +967,31 @@ public void generarGraficaEstudiantes() {
             // Muestra un mensaje de éxito
             JOptionPane.showMessageDialog(this, "Profesor eliminado correctamente.");
         } else {
-            // La eliminación no se confirmó
+            
             eliminacionConfirmada = false;
         }
     }
     }//GEN-LAST:event_eliminarProfesorButtonActionPerformed
 
     private void crearCursoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCursoButtonActionPerformed
-    AgregarCurso agregarCurso = new AgregarCurso(this, cursos); // Pasa la instancia actual de AdministradorMainFrame al constructor de AgregarCurso
+    AgregarCurso agregarCurso = new AgregarCurso(this, cursos); 
     agregarCurso.setVisible(true);
     
     }//GEN-LAST:event_crearCursoButtonActionPerformed
 
     private void cargarCursoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarCursoButtonActionPerformed
     JFileChooser fileChooser = new JFileChooser();
-fileChooser.setMultiSelectionEnabled(true);
-FileNameExtensionFilter csvFilter = new FileNameExtensionFilter("Archivos CSV", "csv");
-fileChooser.setFileFilter(csvFilter);
+    fileChooser.setMultiSelectionEnabled(true);
+    FileNameExtensionFilter csvFilter = new FileNameExtensionFilter("Archivos CSV", "csv");
+    fileChooser.setFileFilter(csvFilter);
 
-int fileChooserState = fileChooser.showOpenDialog(this);
-if (fileChooserState == JFileChooser.APPROVE_OPTION){
-    File[] archivos = fileChooser.getSelectedFiles();
-    for (File file: archivos) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String linea = "";
+        int fileChooserState = fileChooser.showOpenDialog(this);
+            if (fileChooserState == JFileChooser.APPROVE_OPTION){
+                File[] archivos = fileChooser.getSelectedFiles();
+            for (File file: archivos) {
+                try {
+                    BufferedReader reader = new BufferedReader(new FileReader(file));
+                    String linea = "";
 
             // Leer y descartar la primera línea (encabezados)
             reader.readLine();
@@ -1209,7 +1207,7 @@ if (seleccion == JFileChooser.APPROVE_OPTION) {
             title.setAlignment(Paragraph.ALIGN_CENTER);
             document.add(title);
 
-            // Agregar contenido (lista de profesores) al documento
+            // Agregar contenido
             for (Estudiante estudiante: estudiantes) {
                 Paragraph paragraph = new Paragraph(
                     "Código: " + estudiante.getCodigo() + "\n" +

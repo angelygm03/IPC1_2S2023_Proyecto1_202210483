@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author Usuario
  */
 public class ActualizarCurso extends javax.swing.JFrame {
-private AdministradorMainFrame adminMainFrame; // Variable para almacenar la instancia de AdministradorMainFrame
+private AdministradorMainFrame adminMainFrame; 
     private List<Curso> listaDeCursos;
     private Curso curso;
     
@@ -26,8 +26,8 @@ private AdministradorMainFrame adminMainFrame; // Variable para almacenar la ins
         
         
         
-        int rojo = 255; // Valor de rojo (0-255)
-        int verde = 187; // Valor de verde (0-255)
+        int rojo = 255; 
+        int verde = 187; 
         int azul = 92;
         Color miColorPersonalizado = new Color(rojo, verde, azul);
         this.getContentPane().setBackground(miColorPersonalizado);
@@ -50,7 +50,7 @@ private AdministradorMainFrame adminMainFrame; // Variable para almacenar la ins
         }
         Profesor profesorDelCurso = curso.getProfesor();
         
-        // Establecemos el JComboBox con el nombre del profesor asociado al curso
+        //JComboBox con el nombre del profesor asociado al curso
         profesorComboBox.setSelectedItem(profesorDelCurso.getNombre() + " " + profesorDelCurso.getApellido());
         
         

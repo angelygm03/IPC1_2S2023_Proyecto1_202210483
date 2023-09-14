@@ -21,8 +21,8 @@ public class CrearProfesor extends javax.swing.JFrame {
     public CrearProfesor(AdministradorMainFrame adminMainFrame, List<Profesor> profesores) {
         initComponents();
         
-        int rojo = 255; // Valor de rojo (0-255)
-        int verde = 187; // Valor de verde (0-255)
+        int rojo = 255; 
+        int verde = 187; 
         int azul = 92;
         Color miColorPersonalizado = new Color(rojo, verde, azul);
         this.getContentPane().setBackground(miColorPersonalizado);

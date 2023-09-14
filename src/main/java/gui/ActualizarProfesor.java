@@ -11,7 +11,7 @@ import java.util.List;
  * @author Usuario
  */
 public class ActualizarProfesor extends javax.swing.JFrame {
-    private AdministradorMainFrame adminMainFrame; // Variable para almacenar la instancia de AdministradorMainFrame
+    private AdministradorMainFrame adminMainFrame; 
     public List<Profesor> listaDeProfesores; 
     public Profesor profesor;
     public Profesor profesorSeleccionado;
@@ -22,8 +22,8 @@ public class ActualizarProfesor extends javax.swing.JFrame {
     public ActualizarProfesor(AdministradorMainFrame adminMainFrame, List<Profesor> listaDeProfesores, Profesor profesor) {
         initComponents();
         
-        int rojo = 255; // Valor de rojo (0-255)
-        int verde = 187; // Valor de verde (0-255)
+        int rojo = 255; 
+        int verde = 187; 
         int azul = 92;
         Color miColorPersonalizado = new Color(rojo, verde, azul);
         this.getContentPane().setBackground(miColorPersonalizado);

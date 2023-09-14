@@ -19,8 +19,8 @@ public class AgregarCurso extends javax.swing.JFrame {
     public AgregarCurso(AdministradorMainFrame adminMainFrame, List<Curso> cursos) {
         initComponents();
         
-        int rojo = 255; // Valor de rojo (0-255)
-        int verde = 187; // Valor de verde (0-255)
+        int rojo = 255; 
+        int verde = 187; 
         int azul = 92;
         Color miColorPersonalizado = new Color(rojo, verde, azul);
         this.getContentPane().setBackground(miColorPersonalizado);
@@ -36,7 +36,7 @@ public class AgregarCurso extends javax.swing.JFrame {
 public Profesor obtenerProfesorSeleccionado() {
     String nombreCompletoSeleccionado = (String) jComboBox1.getSelectedItem();
 
-    // Luego, busca el profesor por su nombre en la lista de profesores
+    // Busca el profesor por su nombre en la lista de profesores
     List<Profesor> profesores = AdministradorMainFrame.getInstance().getProfesores();
 
     for (Profesor profesor : profesores) {

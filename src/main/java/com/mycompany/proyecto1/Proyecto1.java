@@ -3,7 +3,6 @@ package com.mycompany.proyecto1;
 
 import gui.LoginJFrame;
 
-import com.mycompany.proyecto1.Profesor;
 import java.util.LinkedList;
 /**
  *

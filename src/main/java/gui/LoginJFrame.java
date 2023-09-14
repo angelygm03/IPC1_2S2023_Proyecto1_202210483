@@ -19,21 +19,21 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() {
         initComponents();
-        int rojo = 255; // Valor de rojo (0-255)
-        int verde = 187; // Valor de verde (0-255)
+        int rojo = 255; 
+        int verde = 187; 
         int azul = 92;
         Color miColorPersonalizado = new Color(rojo, verde, azul);
         this.getContentPane().setBackground(miColorPersonalizado);
-        Font labelFont = new Font("Verdana", Font.BOLD, 24); // Cambia "Arial" y 18 según tus preferencias
+        Font labelFont = new Font("Verdana", Font.BOLD, 24); 
         jLabel3.setFont(labelFont);
         Font labelsFont = new Font("Mangal", Font.PLAIN, 16);
         jLabel1.setFont(labelsFont);
         jLabel2.setFont(labelsFont);
     
-        Font buttonFont = new Font("Arial", Font.PLAIN, 12); // Cambia "Arial" y 16 según tus preferencias
+        Font buttonFont = new Font("Arial", Font.PLAIN, 12); 
         ingresarButton.setFont(buttonFont);
     
-        Font textFieldFont = new Font("Arial", Font.PLAIN, 16); // Cambia "Arial" y 14 según tus preferencias
+        Font textFieldFont = new Font("Arial", Font.PLAIN, 16); 
         usuarioTextField.setFont(textFieldFont);
         passwordTextField.setFont(textFieldFont);
         
