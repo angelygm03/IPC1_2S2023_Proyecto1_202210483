@@ -68,6 +68,8 @@ public List<Estudiante> estudiantes = new ArrayList<>();
     public void agregarCurso(int codigoCurso, String nombreCurso, int creditos, Profesor profesor) {
         Curso curso = new Curso(codigoCurso, nombreCurso, creditos, profesor);
         cursos.add(curso); // Agregar el curso a la lista de cursos
+        AppState.serializar();
+        System.out.println("Curso agregado: " + nombreCurso);
     }
 
     // Agregar el método getCursos para obtener la lista de cursos
@@ -92,7 +94,7 @@ public List<Estudiante> estudiantes = new ArrayList<>();
      */
     public AdministradorMainFrame() {
         initComponents();
-        
+        AppState.deserializar();
         int rojo = 255; // Valor de rojo (0-255)
         int verde = 187; // Valor de verde (0-255)
         int azul = 92;
@@ -974,6 +976,7 @@ public void generarGraficaEstudiantes() {
     }//GEN-LAST:event_eliminarProfesorButtonActionPerformed
 
     private void crearCursoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCursoButtonActionPerformed
+    AdministradorMainFrame.getInstance().mostrarVentana();
     AgregarCurso agregarCurso = new AgregarCurso(this, cursos); 
     agregarCurso.setVisible(true);
     
@@ -1027,7 +1030,7 @@ public void generarGraficaEstudiantes() {
         }
     }
     this.LlenarTablaCursos(this.cursos);
-
+    AppState.serializar();
 }
     }
 
@@ -1172,6 +1175,7 @@ if (seleccion == JFileChooser.APPROVE_OPTION) {
         }
         this.LlenarTablaEstudiantes(this.estudiantes);
         generarGraficaEstudiantes();
+        AppState.serializar();
     }
     }//GEN-LAST:event_cargarAlumnosButtonActionPerformed
 
@@ -1231,18 +1235,21 @@ if (seleccion == JFileChooser.APPROVE_OPTION) {
     }//GEN-LAST:event_exportarAlumnosButtonActionPerformed
 
     private void cerrarSesionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionButtonActionPerformed
+        AppState.serializar();
         this.dispose();
         LoginJFrame loginJFrame = new LoginJFrame();
         loginJFrame.setVisible(true);
     }//GEN-LAST:event_cerrarSesionButtonActionPerformed
 
     private void closeSesionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeSesionButtonActionPerformed
+        AppState.serializar();
         this.dispose();
         LoginJFrame loginJFrame = new LoginJFrame();
         loginJFrame.setVisible(true);
     }//GEN-LAST:event_closeSesionButtonActionPerformed
 
     private void getOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getOutButtonActionPerformed
+        AppState.serializar();
         this.dispose();
         LoginJFrame loginJFrame = new LoginJFrame();
         loginJFrame.setVisible(true);

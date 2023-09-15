@@ -7,7 +7,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,13 +20,15 @@ import java.util.logging.Logger;
 public class AppState {
     public static Usuario loggedUser; 
     public static LinkedList<Usuario> usuarios = new LinkedList();
+    public static LinkedList<Profesor> profesores = new LinkedList<>();
+    public static LinkedList<Estudiante> estudiantes = new LinkedList<>();
+    public static List<Curso> cursos = new ArrayList<>();
     public static String rutaUsuariosSerializados = "./DatosSerializados/appState.bin";
     
     public static void serializar(){
         File file = new File(rutaUsuariosSerializados);
         
-        //Creamos la carpeta donde iran los archivos serializados, si no existen
-        
+               
         if(!file.exists()) {
             file.getParentFile().mkdir();
         }
@@ -40,6 +44,9 @@ public class AppState {
             FileOutputStream fos = new FileOutputStream (rutaUsuariosSerializados);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(usuarios);
+            oos.writeObject(profesores);
+            oos.writeObject(estudiantes);
+            oos.writeObject(cursos);
         } catch (FileNotFoundException ex) {
             System.out.println("No se encontró el archivo para serializar");
         } catch (IOException ex){
@@ -55,7 +62,11 @@ public class AppState {
             }
             FileInputStream fis = new FileInputStream(rutaUsuariosSerializados);
             ObjectInputStream ois = new ObjectInputStream(fis);
+            
             usuarios = (LinkedList<Usuario>) ois.readObject();
+            profesores = (LinkedList<Profesor>) ois.readObject();
+            estudiantes = (LinkedList<Estudiante>) ois.readObject();
+            cursos = (List<Curso>) ois.readObject();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AppState.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex){

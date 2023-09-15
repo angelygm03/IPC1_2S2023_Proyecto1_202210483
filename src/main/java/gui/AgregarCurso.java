@@ -31,9 +31,19 @@ public class AgregarCurso extends javax.swing.JFrame {
         
         this.adminMainFrame = adminMainFrame;
         llenarComboBoxProfesores();
+        
 
     }
-public Profesor obtenerProfesorSeleccionado() {
+public void mostrarVentana() {
+    // Verifica si la ventana ya está visible
+    if (!isVisible()) {
+        // Si no es visible, hazla visible
+        setVisible(true);
+    }
+    
+    toFront();
+}
+    public Profesor obtenerProfesorSeleccionado() {
     String nombreCompletoSeleccionado = (String) jComboBox1.getSelectedItem();
 
     // Busca el profesor por su nombre en la lista de profesores
@@ -96,6 +106,11 @@ public Profesor obtenerProfesorSeleccionado() {
         });
 
         salirButton.setText("Salir");
+        salirButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirButtonActionPerformed(evt);
+            }
+        });
 
         codigoCursoTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,7 +194,7 @@ public Profesor obtenerProfesorSeleccionado() {
         String nombreCurso = nombreCursoTF.getText();
         int creditos = Integer.parseInt(creditosCursoTF.getText());
 
-        // Obtén el profesor seleccionado usando el método obtenerProfesorSeleccionado
+        
         Profesor profesorSeleccionado = obtenerProfesorSeleccionado();
 
         if (profesorSeleccionado != null) {
@@ -205,6 +220,10 @@ public Profesor obtenerProfesorSeleccionado() {
 
        
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void salirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_salirButtonActionPerformed
 
     private void llenarComboBoxProfesores() {
     jComboBox1.removeAllItems();

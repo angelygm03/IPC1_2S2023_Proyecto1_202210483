@@ -1,12 +1,13 @@
 package com.mycompany.proyecto1;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
 /**
  *
  * @author Usuario
  */
-public class Estudiante extends Persona {
+public class Estudiante extends Persona implements Serializable {
     public LinkedList<Estudiante> estudiantes = new LinkedList();
     
     public Estudiante(int codigo, String nombre, String apellido, String correo, String genero, String passwordPersona) {

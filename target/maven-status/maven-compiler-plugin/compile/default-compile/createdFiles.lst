@@ -10,13 +10,10 @@ gui\ActualizarCurso$1.class
 gui\AdministradorMainFrame$9.class
 gui\AdministradorMainFrame$19.class
 gui\AgregarCurso.class
-com\mycompany\proyecto1\Contenedor.class
 gui\LoginJFrame$1.class
-gui\ProfesorMainFrame.class
 gui\ActualizarProfesor$4.class
 gui\LoginJFrame.class
 gui\AgregarCurso$2.class
-gui\ProfesorMainFrame$1.class
 com\mycompany\proyecto1\Proyecto1.class
 gui\AdministradorMainFrame$20.class
 gui\AdministradorMainFrame$12.class
@@ -26,6 +23,7 @@ com\mycompany\proyecto1\AppState.class
 gui\CrearProfesor$3.class
 com\mycompany\proyecto1\Persona.class
 com\mycompany\proyecto1\Curso.class
+gui\AgregarCurso$5.class
 gui\ActualizarProfesor$3.class
 gui\AdministradorMainFrame$18.class
 gui\AdministradorMainFrame$5.class
